@@ -1,12 +1,82 @@
-﻿<Window x:Class="PDFClassifierPro.UI.MainWindow"
+﻿<fluent:RibbonWindow x:Class="PDFClassifierPro.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fluent="urn:fluent-ribbon"
         xmlns:local="clr-namespace:PDFClassifierPro.UI"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:controls="clr-namespace:PDFClassifierPro.UI.Views.Controls"
+        Title="PDF Classifier Pro"
+        Height="800"
+        Width="1200"
+        WindowState="Maximized">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <fluent:Ribbon Grid.Row="0">
+            <fluent:RibbonTabItem Header="Home">
+                <fluent:RibbonGroupBox Header="File">
+                    <fluent:Button Header="Open PDF" 
+                                  LargeIcon="pack://application:,,,/Images/open.png"
+                                  Click="OnOpenPdfClicked"/>
+                    <fluent:Button Header="Save" 
+                                  LargeIcon="pack://application:,,,/Images/save.png"
+                                  Click="OnSaveClicked"/>
+                </fluent:RibbonGroupBox>
+                
+                <fluent:RibbonGroupBox Header="Redaction">
+                    <fluent:Button Header="Redact Area" 
+                                  LargeIcon="pack://application:,,,/Images/redact.png"
+                                  Click="OnRedactAreaClicked"/>
+                    <fluent:Button Header="Clear Redactions" 
+                                  LargeIcon="pack://application:,,,/Images/clear.png"
+                                  Click="OnClearRedactionsClicked"/>
+                </fluent:RibbonGroupBox>
+                
+                <fluent:RibbonGroupBox Header="Classification">
+                    <fluent:ComboBox x:Name="ClassificationCombo" 
+                                    Header="Level"
+                                    SelectedIndex="0">
+                        <ComboBoxItem Content="Unclassified"/>
+                        <ComboBoxItem Content="Confidential"/>
+                        <ComboBoxItem Content="Secret"/>
+                        <ComboBoxItem Content="Top Secret"/>
+                    </fluent:ComboBox>
+                    <fluent:Button Header="Apply Classification" 
+                                  LargeIcon="pack://application:,,,/Images/classify.png"
+                                  Click="OnApplyClassificationClicked"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+            
+            <fluent:RibbonTabItem Header="Pro Features">
+                <fluent:RibbonGroupBox Header="Advanced">
+                    <fluent:Button Header="Auto OCR" 
+                                  LargeIcon="pack://application:,,,/Images/ocr.png"
+                                  Click="OnAutoOcrClicked"/>
+                    <fluent:Button Header="Export Redacted" 
+                                  LargeIcon="pack://application:,,,/Images/export.png"
+                                  Click="OnExportRedactedClicked"/>
+                </fluent:RibbonGroupBox>
+                
+                <fluent:RibbonGroupBox Header="License">
+                    <fluent:Button Header="Activate Pro" 
+                                  LargeIcon="pack://application:,,,/Images/license.png"
+                                  Click="OnActivateProClicked"/>
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+        </fluent:Ribbon>
+        
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusText" Text="Ready"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="LicenseStatus" Text="Free Version"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+        <controls:PdfViewerControl x:Name="Viewer" Grid.Row="1"/>
     </Grid>
-</Window>
+</fluent:RibbonWindow>

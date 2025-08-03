@@ -1,0 +1,64 @@
+<Window x:Class="PDFClassifierPro.UI.Views.LicenseActivationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Activate Pro License"
+        Height="300"
+        Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" 
+                   Text="Enter your Pro license key to unlock advanced features:"
+                   FontSize="14"
+                   Margin="0,0,0,20"/>
+        
+        <TextBlock Grid.Row="1" 
+                   Text="License Key:"
+                   FontWeight="Bold"
+                   Margin="0,0,0,5"/>
+        
+        <TextBox x:Name="LicenseKeyTextBox"
+                 Grid.Row="2"
+                 Height="30"
+                 FontFamily="Consolas"
+                 Margin="0,0,0,20"/>
+        
+        <TextBlock Grid.Row="3"
+                   Text="Features included in Pro version:"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+        
+        <StackPanel Grid.Row="4" Margin="0,0,0,20">
+            <TextBlock Text="• Automatic OCR for scanned documents" Margin="5,2"/>
+            <TextBlock Text="• Unlimited redaction areas" Margin="5,2"/>
+            <TextBlock Text="• Export redacted PDFs with true text removal" Margin="5,2"/>
+            <TextBlock Text="• Advanced classification and tagging" Margin="5,2"/>
+            <TextBlock Text="• Secure vault export" Margin="5,2"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="5" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right">
+            <Button x:Name="ActivateButton"
+                    Content="Activate"
+                    Width="100"
+                    Height="30"
+                    Margin="0,0,10,0"
+                    Click="OnActivateClicked"/>
+            <Button x:Name="CancelButton"
+                    Content="Cancel"
+                    Width="100"
+                    Height="30"
+                    Click="OnCancelClicked"/>
+        </StackPanel>
+    </Grid>
+</Window> 
