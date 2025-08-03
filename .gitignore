@@ -1,0 +1,71 @@
+# Visual Studio Code
+.vscode/
+.history/
+
+# Build Results
+bin/
+obj/
+TestResults/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+
+# Rider/JetBrains
+.idea/
+
+# Backup files
+*.bak
+*.tmp
+*.old
+
+# Logs
+*.log
+
+# Auto-generated
+Generated_*.cs
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tesseract and other OCR temp files
+*.traineddata
+tessdata/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Secrets / Licenses (if applicable)
+license.key
+appsettings.secret.json
+.env
+.env.*
+
+# PDF or test assets
+/TestAssets/
+*.pdf
+*.redacted.pdf
+
+# Coverage reports
+coverage/
+coverage.*.xml
+*.lcov
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Other
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
