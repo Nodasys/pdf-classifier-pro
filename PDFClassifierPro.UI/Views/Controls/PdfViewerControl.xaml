@@ -1,9 +1,10 @@
 <UserControl x:Class="PDFClassifierPro.UI.Views.Controls.PdfViewerControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-             xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration">
+             xmlns:WindowsForms="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration">
+    
     <Grid>
-        <wfi:WindowsFormsHost x:Name="winFormsHost"/>
+        <WindowsForms:WindowsFormsHost x:Name="winFormsHost" 
+                                      Background="White"/>
     </Grid>
 </UserControl>

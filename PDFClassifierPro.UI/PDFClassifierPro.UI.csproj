@@ -8,6 +8,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Fluent.Ribbon" Version="11.0.1" />
     <PackageReference Include="PdfiumViewer" Version="2.13.0" />
+    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
     <PackageReference Include="PdfiumViewer.WPF" Version="1.0.6" />
     <PackageReference Include="Tesseract" Version="5.2.0" />
 
